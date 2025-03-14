@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: rgb(64, 70, 85);
+}
+
+@font-face {
+    font-family: blockFont;
+    src: url("/static/fonts/Blockletter.otf");
+}
+
+@font-face {
+    font-family: popW;
+    src: url("/static/fonts/popW.ttf");
+}
+
+@font-face {
+    font-family: futurist;
+    src: url("/static/fonts/futurist-bold.otf");
+}
+
+.rightContainerInbox {
+    position: absolute;
+    left: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.inboxRepliesLikesRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 1em;
+    font-family: popW;
+    font-size: 1.5em;
+    color: rgb(11, 31, 51);
+}
+
+.repliesButton {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 1em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.repliesButton img {
+    margin: 0.25em;
+    width: 1em;
+    height: 1em;
+}
+
+.likesButton {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 1em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.likesButton img {
+    margin: 0.25em;
+    width: 1em;
+    height: 1em;
+}
+
+.inboxButton {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 1em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.inboxButton img {
+    margin: 0.25em 0.25em 0.25em 0em;
+    width: 1em;
+    height: 1em;
+}
+
+.backg:hover {
+    background-color: rgb(178, 178, 178);
+}
+
+.backg:active {
+    background-color: rgb(233, 209, 173);
+}

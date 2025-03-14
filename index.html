@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+
+    <link rel="preload" href="./static/fonts/Blockletter.otf" as="font" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./static/styles/style.css">
+    <link rel="stylesheet" href="./static/styles/secondContainer.css">
+    <link rel="stylesheet" href="./static/styles/othermods.css">
+    <link rel="stylesheet" href="./static/styles/teamSection.css">
+    <link rel="stylesheet" href="./static/styles/comments.css">
+
+    <script defer src="./static/scripts/init.js"></script>
+    <script defer src="./static/scripts/modpacknav.js"></script>
+    <script defer src="./static/scripts/scrollevents.js"></script>
+    <script defer src="./static/scripts/mainnav.js"></script>
+    <script defer src="./static/scripts/commentsection.js"></script>
+    <script defer src="./static/scripts/teamSection.js"></script>
+    <script defer src="./static/scripts/circlecursor.js"></script>
+
+    <meta name="robots" content="all">
+    <meta name="og:title" content="The Best Minecraft Modpacks Made by Mark | Epic Legion">
+
+    <title>Epic Legion</title>
+</head>
+
+<body>
+
+    <div id="circle-cursor">
+        <h1>Download</h1>
+    </div>
+
+    <div class="scrollBarTrack invisible">
+        <div class="scrollBarThumb"></div>
+    </div>
+
+    <main class="loadingScreen">
+        <div class="loadingScreenContent">
+            <img src="/static/images/logo transparent.png" alt="">
+            <h1>Loading <div class="loadingDots"><span>.</span><span>.</span><span>.</span></div>
+            </h1>
+            <div class="loadingStatus">
+                <h2>100%</h2>
+            </div>
+            <article class="loadingLine"><!-- Status line --></article>
+        </div>
+    </main>
+
+
+    <section class="bannerContainer" id="1C">
+        <div class="slide" id="banner">
+            <div class="title-profile-container">
+                <h1 class="main-title">
+                    EPIC LEGION
+                </h1>
+                <div class="viewMoreAndProfile">
+                    <div class="viewMoreIconBackground">
+                        <div id="titleTabs" class="hideCursor">
+                            <a class="titleTab" id="lessMotionTab">Less Motion</a>
+                            <a class="titleTab" target="_blank" href="https://discord.com/invite/epic">Contact Us</a>
+                            <a class="titleTab" id="settingsTab">Settings</a>
+                        </div>
+                        <div id="viewMoreIcon">
+                            <span id="viewMoreTop"></span>
+                            <span id="viewMoreMiddle"></span>
+                            <span id="viewMoreBottom"></span>
+                        </div>
+                        <div class="profileTitleContainer hideCursor" onclick="window.location.href='auth'"
+                            id="profileTitle">
+                            <a id="profileSignInUsername">SIGN IN</a>
+                            <img id="ProfilePFP" src="/static/images/beforeSigninPFP.png">
+                        </div>
+                    </div>
+                    <div id="settingsSignIn">
+                        <a href="auth">
+                            Sign in to use this feature.
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <h2 class="sub-title">
+                MODPACKS BY MARK
+            </h2>
+            <h3 class="mainTitle3">
+                <img src="./static/images/scrollDownButton.gif">
+                <span>Scroll Down to Continue</span>
+            </h3>
+        </div>
+        <div class="midTextContainer">
+            <div id="MidText">IMMERSE YOURSELF IN A WORLD OF ENDLESS MODS.</div>
+            <div id="MidText2">WHERE EVERY BLOCK TELLS A STORY.</div>
+        </div>
+    </section>
+
+    <div class="blankContainer"></div>
+    <div class="secondContainerNavContainer hideCursor">
+        <div class="secondContainerNav">
+            <nav class="navbar2">
+                <ul id="sliderNav">
+                    <li class="navBtns selected" onclick="setActive(this)">
+                        <a onmouseover="hoverOption(0)" onclick="changeDetails(dataArr[0])">Dying Light</a>
+                    </li>
+                    <li class="navBtns" onclick="setActive(this)">
+                        <a onmouseover="hoverOption(1) " onclick="changeDetails(dataArr[1])">BruhPak 2</a>
+                    </li>
+                    <li class="navBtns" onclick="setActive(this)">
+                        <a onmouseover="hoverOption(2)" onclick="changeDetails(dataArr[2])">Rinthed</a>
+                    </li>
+                    <li class="navBtns" onclick="setActive(this)">
+                        <a onmouseover="hoverOption(3)" onclick="changeDetails(dataArr[3])">WILD</a>
+                    </li>
+                    <li class="navBtns" onclick="setActive(this)">
+                        <a onmouseover="hoverOption(4)" onclick="changeDetails(dataArr[4])">Epicly Galaxy</a>
+                    </li>
+                    <li id="SliderBackground">
+                    <li id="Slider">
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--  -->
+    <!-- _____ Image Gallery Section _____ -->
+    <!--  -->
+    <div class="secondContainer">
+        <div class="leftSecondContainer">
+            <div id="Heading">
+                <div class="overflowStopper">
+                    <h1 id="Title"></h1>
+                </div>
+
+                <div class="overflowStopper">
+                    <span id="Versions" class="GOUP">
+                        <img id="VersionsImage" src="./static/images/checkmark.png">
+                        <p id="VersionsText"></p>
+                        <p>&nbsp</p>
+                        <img id="DownloadsImage" src="./static/images/dowload.png">
+                        <p id="DownloadsText"></p>
+                    </span>
+                </div>
+            </div>
+            <div class="overflowStopper">
+                <a id="Summary" class="downloadable" href="" target="_blank"></a>
+            </div>
+        </div>
+        <div class="rightSecondContainer">
+            <div class="imageContainer hideCursor">
+                <div id="ImageGallery">
+                    <div id="DLImageGallery" class="imageCollection activeCollection">
+                        <img src="./static/images/DL1.png" class="gallery-image">
+                        <img src="./static/images/DL2.png" class="gallery-image">
+                        <img src="./static/images/DL3.png" class="gallery-image">
+                        <img src="./static/images/DL4.png" class="gallery-image">
+                        <img src="./static/images/DL5.png" class="gallery-image">
+                    </div>
+                    <div id="BPImageGallery" class="imageCollection">
+                        <img src="./static/images/BP1.png" class="gallery-image">
+                        <img src="./static/images/BP2.png" class="gallery-image">
+                        <img src="./static/images/BP3.png" class="gallery-image">
+                        <img src="./static/images/BP4.png" class="gallery-image">
+                        <img src="./static/images/BP5.png" class="gallery-image">
+                    </div>
+                    <div id="rinthedImageGallery" class="imageCollection">
+                        <img src="./static/images/rinthed1.png" class="gallery-image">
+                        <img src="./static/images/rinthed2.png" class="gallery-image">
+                        <img src="./static/images/rinthed3.png" class="gallery-image">
+                        <img src="./static/images/rinthed4.png" class="gallery-image">
+                        <img src="./static/images/rinthed5.png" class="gallery-image">
+                    </div>
+                    <div id="WILDImageGallery" class="imageCollection">
+                        <img src="./static/images/WILD1.png" class="gallery-image">
+                        <img src="./static/images/WILD2.png" class="gallery-image">
+                        <img src="./static/images/WILD3.png" class="gallery-image">
+                        <img src="./static/images/WILD4.png" class="gallery-image">
+                        <img src="./static/images/WILD5.png" class="gallery-image">
+                    </div>
+                    <div id="epicImageGallery" class="imageCollection">
+                        <img src="./static/images/epic1.png" class="gallery-image">
+                        <img src="./static/images/epic2.png" class="gallery-image">
+                        <img src="./static/images/epic3.png" class="gallery-image">
+                        <img src="./static/images/epic4.png" class="gallery-image">
+                        <img src="./static/images/epic5.png" class="gallery-image">
+                    </div>
+                </div>
+                <a class="circle" id="RightArrowCircle">
+                    <img class="arrow" id="RightArrow" src="./static/images/rightArrow.png" onclick="showNextImage()">
+                </a>
+                <a class="circle" id="LeftArrowCircle">
+                    <img class="arrow" id="LeftArrow" src="./static/images/leftArrow.png" onclick="showPreviousImage()">
+                </a>
+                <div class="pagination">
+                    <a><img class="miniImage imageSelected" id="i0" src="./static/images/DL1.png"
+                            onclick="changeSelectedImage()"></a>
+                    <a><img class="miniImage" id="i1" src="./static/images/DL2.png" onclick="changeSelectedImage()"></a>
+                    <a><img class="miniImage" id="i2" src="./static/images/DL3.png" onclick="changeSelectedImage()"></a>
+                    <a><img class="miniImage" id="i3" src="./static/images/DL4.png" onclick="changeSelectedImage()"></a>
+                    <a><img class="miniImage" id="i4" src="./static/images/DL5.png" onclick="changeSelectedImage()"></a>
+                    <a class="border"></a>
+                </div>
+                <div id="thirdcontainer-transition"></div>
+            </div>
+        </div>
+    </div>
+    <div id="thirdcontainer-transition-light"></div>
+
+    <!--  -->
+    <!-- _____ Mods Section _____ -->
+    <!--  -->
+
+    <div class="introHeading"><span>AND</span> <span>THERE</span> <span>ARE</span> <span>MANY</span>
+        <span>MORE</span> <span>MODPACKS</span> <span>FOR</span>
+        <span>YOU</span> <span>TO</span> <span>EXPLORE...</span>
+    </div>
+
+    <section class="modSection">
+        <div class="parallaxHeadings">
+            <h1 class="heading1">EXPLORE NEW DIMENSIONS</h1>
+            <h1 class="heading2">CONQUER POWERFUL BOSSES</h1>
+            <h1 class="heading3">REDEFINE YOUR EXPERIENCE</h1>
+        </div>
+
+        <div class="modCard modBox1">
+            <div class="modImageContainer downloadable">
+                <a href="https://legacy.curseforge.com/minecraft/modpacks/bruhs-shops" target="_blank"> <img
+                        src=".././static/images/mod1.png" /></a>
+            </div>
+            <h1>Bruh's Shop</h1>
+        </div>
+        <div class="modCard modBox2">
+            <div class="modImageContainer downloadable">
+                <a href="https://modrinth.com/modpack/optimized-forge" target="_blank"> <img
+                        src=".././static/images/mod2.png" /></a>
+            </div>
+            <h1>Optimized Forge</h1>
+        </div>
+        <div class="modCard modBox3">
+            <div class="modImageContainer downloadable">
+                <a href="https://legacy.curseforge.com/minecraft/modpacks/the-ultra-hard-pack" target="_blank"><img
+                        src=".././static/images/mod3.png" /></a>
+            </div>
+            <h1>The Ultra Hard Pack</h1>
+        </div>
+        <div class="modCard modBox4">
+            <div class="modImageContainer downloadable">
+                <a href="https://legacy.curseforge.com/minecraft/modpacks/bruhs-funpack" target="_blank">
+                    <img src=".././static/images/mod4.png" /></a>
+            </div>
+            <h1>Bruh's Funpack</h1>
+        </div>
+        <div class="modCard modBox5">
+            <div class="modImageContainer downloadable">
+                <a href="https://legacy.curseforge.com/minecraft/modpacks/bruhpak-lite" target="_blank">
+                    <img src=".././static/images/mod5.png" /></a>
+            </div>
+            <h1>Bruhpak Lite</h1>
+        </div>
+        <div class="modCard modBox6">
+            <div class="modImageContainer downloadable">
+                <a href="https://legacy.curseforge.com/minecraft/modpacks/farmers-paradise" target="_blank">
+                    <img src=".././static/images/mod6.png" /></a>
+            </div>
+            <h1>Farmer's Paradise</h1>
+        </div>
+
+        <div class="modCard modBox7">
+            <div class="modImageContainer downloadable">
+                <a href="https://legacy.curseforge.com/minecraft/modpacks/definition-of-epic" target="_blank">
+                    <img src=".././static/images/mod7.png" /></a>
+            </div>
+            <h1>Definition of Epic</h1>
+        </div>
+        <div class="modCard modBox8">
+            <div class="modImageContainer downloadable">
+                <a href="https://legacy.curseforge.com/minecraft/modpacks/easy-and-awsome" target="_blank">
+                    <img src=".././static/images/mod8.png" /></a>
+            </div>
+            <h1>Easy and Awesome</h1>
+        </div>
+        <div class="modCard modBox9">
+            <div class="modImageContainer downloadable">
+                <a href="https://modrinth.com/modpack/assassin-creed" target="_blank">
+                    <img src=".././static/images/mod9.png" /></a>
+            </div>
+            <h1>Assassin's Faith</h1>
+        </div>
+    </section>
+
+    <!--  -->
+    <!-- _____ Team Section _____ -->
+    <!--  -->
+    <section class="team-section" id="5C">
+        <div class="teamLeft">
+            <img class="tImg1" src="/static/images/teamimage1.png">
+            <img class="tImg2" src="/static/images/teamimage2.png">
+            <img class="tImg3" src="/static/images/teamimage6.png">
+        </div>
+
+        <div class="teamRight">
+            <h1>
+                <span><small class="TeamTitle">OUR TEAM</small></span>
+                <div class="teamTitleLine"></div>
+            </h1>
+
+
+            <div class="teamDetailsContainer">
+                <div class="teamProfilesContainer">
+                    <img class="mainProfilePicture slidingProfile" id="shinyProfileImage"
+                        src="./static/images/shinyPFP.gif">
+                    <div class="profileDetails slidingProfile" id="shinyProfile">
+                        <h2>SHINING</h2>
+                        <h3>Lead Designer/Manager
+                        </h3>
+                        <a href="https://discord.com/invite/epic" target="_blank">
+                            <img src="./static/images/discordLogo.png">
+                        </a>
+                        <a href="https://www.instagram.com/shiny_0907/src=" target="_blank">
+                            <img src="./static/images/instagramLogo.png">
+                        </a>
+                        <a href="https://open.spotify.com/playlist/2cin9FtJO8tZz2WnmTlao5?si=36MWfcqATui-Cu0Mn5LnYA&pi=a-DUGgsUEXSj-o"
+                            target="_blank">
+                            <img src="./static/images/spotifyLogo.png">
+
+                        </a>
+                        <p>
+                            19, currently serving mandatory military service in Singapore, posted to Brunei.
+                            Because
+                            I
+                            have some free time, I decided to continue my coding and not lose my skills since I
+                            have
+                            to
+                            resume my computer science major after my service. I got some friends to create
+                            websites
+                            together.
+                        </p>
+                    </div>
+                    <img class="mainProfilePicture slidingProfile" id="donProfileImage"
+                        src="./static/images/donPFP.png">
+                    <div class="profileDetails slidingProfile" id="donProfile">
+                        <h2>DONYALL</h2>
+                        <h3>Lead Front-End Developer</h3>
+
+                        <a href="https://github.com/donyall" target="_blank">
+                            <img src="./static/images/githubLogo.png">
+                        </a>
+                        <a href="https://open.spotify.com/user/smohccw3hyftw4gazn4acmhpy" target="_blank">
+                            <img src="./static/images/spotifyLogo.png">
+                        </a>
+                        <p>
+                            While going through first-year undergraduate studies in Computer Science, I found
+                            myself enough free time to pursue my passion for web development. In just a few
+                            days, I
+                            managed to learn the basics of HTML, CSS, and JavaScript. This project was the
+                            perfect
+                            opportunity to put my skills to the test.
+                        </p>
+                    </div>
+                    <img class="mainProfilePicture slidingProfile" id="parallelProfileImage"
+                        src="./static/images/ayannagoripfp.jpg">
+                    <div class="profileDetails slidingProfile" id="parallelProfile">
+                        <h2>Ayan Nagori</h2>
+                        <h3>Front-End Developer</h3>
+
+                        <a href="https://github.com/parallelxl" target="_blank">
+                            <img src="./static/images/githubLogo.png">
+                        </a>
+                        <a href="https://ayannagori.vercel.app" target="_blank">
+                            <img src="/static/images/websiteLogo.png">
+                        </a>
+                        <p class="profileAbout">
+                            Hi, I'm Ayan Nagori. 15 year passionate Front-End Developer from
+                            India.
+                            I was just looking around in a web dev discord server and found these amazing guys
+                            working on
+                            a project about minecraft mods. I love minecraft and I am a front-end dev too so decided
+                            to join visit my portfolio to check out my other projects.
+                        </p>
+                    </div>
+                    <img class="mainProfilePicture slidingProfile" id="lifeProfileImage"
+                        src="./static/images/lifePFP.png">
+                    <div class="profileDetails slidingProfile" id="lifeProfile">
+                        <h2>LIFE</h2>
+                        <h3>Lead Back-end Developer</h3>
+
+                        <p>
+                            Introducing Life, a programming expert working behind the scenes.
+                            A Python enthusiast, he took charge of the website's backend using Flask from day one.
+                            Life's been with the project since its early days, quietly shaping it into what it is today.
+                            No fuss, just solid code that keeps everything running smoothly.
+                        </p>
+                    </div>
+                    <img class="mainProfilePicture slidingProfile" id="markProfileImage"
+                        src="./static/images/markPFP.png">
+                    <div class="profileDetails slidingProfile" id="markProfile">
+                        <h2>MARK</h2>
+                        <h3>Creator</h3>
+
+                        <a href="https://github.com/epicyeeto" target="_blank"><img class="discordLogo"
+                                src="./static/images/githubLogo.png"></a>
+                        <a href="https://www.youtube.com/channel/UCpCTyTkaCNF44q6cU4YDVkw" target="_blank"><img
+                                class="instagramLogo" src="./static/images/youtubeLogo.png"></a>
+                        <p>
+                            Hi I'm Mark, and I make really cool modpacks (that you should try out), currently 16
+                            and
+                            doing coding as a side gig. Other than that I have a lot of other side hobbies such
+                            as
+                            game development and youtube. I like to see and try out whatever seems interesting
+                            to me
+                            so I'm always up to something new. I wanna go to MIT so wish me luck.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="profilePaginationContainer hideCursor">
+                    <div class="profilePictureContainer">
+                        <img class="profilePicture pfpSelected" src="./static/images/shinyPFP.gif"
+                            onclick="clickPFPTransition(5, this)">
+                    </div>
+                    <div class="profilePictureContainer">
+                        <img class="profilePicture" src="./static/images/donPFP.png"
+                            onclick="clickPFPTransition(4, this)">
+                    </div>
+                    <div class="profilePictureContainer">
+                        <img class="profilePicture" src="./static/images/ayannagoripfp.jpg"
+                            onclick="clickPFPTransition(3, this)">
+                    </div>
+                    <div class="profilePictureContainer">
+                        <img class="profilePicture" src="./static/images/lifePFP.png"
+                            onclick="clickPFPTransition(2, this)">
+                    </div>
+                    <div class="profilePictureContainer">
+                        <img class="profilePicture" src="./static/images/markPFP.png"
+                            onclick="clickPFPTransition(1, this)">
+                    </div>
+                    <hr id="profilePaginationDot" class="hide">
+                </div>
+            </div>
+        </div>
+
+        <section class="CTsection" id="CTsection">
+            <div class="CTImgContainer">
+                <img src="./static/images/commentTransition.png" class="CTImgSlow">
+                <div id="seeYouText">STAY EPIC</div>
+                <img src="./static/images/commentTransitionCut.png" class="CTImgSlow">
+            </div>
+        </section>
+    </section>
+    <div class="commentSection hideCursor" id="6C">
+        <!-- CT= Comment Transtion -->
+        <div class="commentContainer">
+            <div class="commentHeading">
+                <h1 class="commentTitle">
+                    COMMENT
+                </h1>
+                <h2 class="numOfComments">
+                    # Comments
+                </h2>
+            </div>
+        </div>
+        <div id="commentSection" onclick="hideMoreButtons()">
+            <div id="sortBySignIn">
+                <div id="sortBy">
+                    <div id="sortByText" onclick="expandSortBy()">
+                        Sort By
+                        <img src="/static/images/triangleArrow.png" id="sortArrow">
+                    </div>
+                    <div id="sortByOptions">
+                        <a class="sortByOption" onclick="updateComments('newest', this)" id="sortNew">
+                            Newest
+                        </a>
+                        <a class="sortByOption" onclick="updateComments('oldest', this)" id="sortOld">
+                            Oldest
+                        </a>
+                        <a class="sortByOption sortBySelected" onclick="updateComments('likes', this)" id="sortLikes">
+                            Likes
+                        </a>
+                    </div>
+                </div>
+                <div id="signIn">
+                    <a href="auth" id="selfCommentUsername">SIGN IN TO COMMENT</a>
+                </div>
+            </div>
+            <div class="typeBox">
+                <form class="commentForm" method="POST" action="/api/comments/create">
+                    <div id="pfpcommentBox">
+                        <div class="commentPFP">
+                            <img src="/static/images/beforeSignInCommentPFP.png" id="commentPFPIMG">
+                        </div>
+                        <input type="text" id="commentBox" name="content" placeholder="Sign In to Comment">
+                        <!-- PLEASE MODIFY THIS LINE WITH JS TO RETURN PARENT_ID OF MESSAGE WHEN NECESSARY -->
+                        <input type="hidden" name="parent_id" value="None">
+                    </div>
+                    <div class="replySubmitButtonRow">
+                        <input type="button" class="replyCancelButton" value="Cancel">
+                        <input type="button" class="replySubmitButton" value="Comment" onclick="writeComment()">
+                    </div>
+                </form>
+            </div>
+            <article class="comment">
+                <div class="commentedPFP">
+                    <img src="./static/images/shinyPFP.gif">
+                </div>
+                <div class="commentParagraphContainer">
+                    <div class="username">
+                        Shiny0907
+                        <div class="date">12/3/2023</div>
+                        <div class="moreButton">
+                            <img src="./static/images/more.png">
+                            <div class="dropdown-content">
+                                <a href="#">Edit</a>
+                                <a href="#">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. In quod
+                        sint,
+                        eum distinctio ullam
+                        tempore
+                        iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat, omnis!
+                        Tempora,
+                        sapiente autem?
+                    </div>
+                    <div class="likeReplyReportContainer">
+                        <div class="likeButton">
+                            <img src="./static/images/likebutton.png">
+                        </div>
+                        <div class="likeNumber">
+                            234
+                        </div>
+                        <div class="replyButton">
+                            REPLY
+                        </div>
+
+                        <div class="reportButton">
+                            <img src="./static/images/reportButton.png">
+                        </div>
+                    </div>
+                    <div class="viewReplies">
+                        ── view 17 replies
+                    </div>
+                </div>
+            </article>
+            <article class="comment">
+                <div class="commentedPFP">
+                    <img src="./static/images/shinyPFP.gif">
+                </div>
+                <div class="commentParagraphContainer">
+                    <div class="commentBody">
+                        <div class="username">
+                            Shiny0907
+                            <div class="date">12/3/2023</div>
+                        </div>
+                        <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. In quod
+                            sint,
+                            eum distinctio ullam
+                            tempore
+                            iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat, omnis!
+                            Tempora,
+                            sapiente autem?
+                        </div>
+                        <div class="likeReplyReportContainer">
+                            <div class="likeButton">
+                                <img src="./static/images/likebutton.png">
+                            </div>
+                            <div class="likeNumber">
+                                234
+                            </div>
+                            <div class="replyButton">
+                                REPLY
+                            </div>
+                            <div class="reportButton">
+                                <img src="./static/images/reportButton.png">
+                            </div>
+                        </div>
+                        <div class="viewReplies">
+                            ── collapse all replies
+                        </div>
+                    </div>
+                    <article class="replyCommentContainer">
+                        <div class="replyPFP">
+                            <img src="./static/images/donPFP.png">
+                        </div>
+                        <div class="commentParagraphContainer">
+                            <div class="username">
+                                DonYall
+                                <div class="date">12/3/2023</div>
+                            </div>
+                            <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                In
+                                quod
+                                sint,
+                                eum distinctio ullam
+                                tempore
+                                iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat,
+                                omnis!
+                                Tempora,
+                                sapiente autem?
+                            </div>
+                            <div class="likeReplyReportContainer">
+                                <div class="likeButton">
+                                    <img src="./static/images/likebutton.png">
+                                </div>
+                                <div class="likeNumber">
+                                    234
+                                </div>
+                                <div class="replyButton">
+                                    REPLY
+                                </div>
+                                <div class="reportButton">
+                                    <img src="./static/images/reportButton.png">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="replyCommentContainer">
+                        <div class="replyPFP">
+                            <img src="./static/images/donPFP.png">
+                        </div>
+                        <div class="commentParagraphContainer">
+                            <div class="username">
+                                DonYall
+                                <div class="date">12/3/2023</div>
+                            </div>
+                            <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                In
+                                quod
+                                sint,
+                                eum distinctio ullam
+                                tempore
+                                iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat,
+                                omnis!
+                                Tempora,
+                                sapiente autem?
+                            </div>
+                            <div class="likeReplyReportContainer">
+                                <div class="likeButton">
+                                    <img src="./static/images/likebutton.png">
+                                </div>
+                                <div class="likeNumber">
+                                    234
+                                </div>
+                                <div class="replyButton">
+                                    REPLY
+                                </div>
+                                <div class="reportButton">
+                                    <img src="./static/images/reportButton.png">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="replyCommentContainer">
+                        <div class="replyPFP">
+                            <img src="./static/images/donPFP.png">
+                        </div>
+                        <div class="commentParagraphContainer">
+                            <div class="username">
+                                DonYall
+                                <div class="date">12/3/2023</div>
+                            </div>
+                            <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                In
+                                quod
+                                sint,
+                                eum distinctio ullam
+                                tempore
+                                iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat,
+                                omnis!
+                                Tempora,
+                                sapiente autem?
+                            </div>
+                            <div class="likeReplyReportContainer">
+                                <div class="likeButton">
+                                    <img src="./static/images/likebutton.png">
+                                </div>
+                                <div class="likeNumber">
+                                    234
+                                </div>
+                                <div class="replyButton">
+                                    REPLY
+                                </div>
+                                <div class="reportButton">
+                                    <img src="./static/images/reportButton.png">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="viewMoreReplies">
+                        ── view more replies
+                    </div>
+                </div>
+            </article>
+            <article class="comment">
+                <div class="commentedPFP">
+                    <img src="./static/images/shinyPFP.gif">
+                </div>
+                <div class="commentParagraphContainer">
+                    <div class="username">
+                        Shiny0907
+                        <div class="date">12/3/2023</div>
+                    </div>
+                    <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. In quod
+                        sint,
+                        eum distinctio ullam
+                        tempore
+                        iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat, omnis!
+                        Tempora,
+                        sapiente autem?
+                    </div>
+                    <div class="likeReplyReportContainer">
+                        <div class="likeButton">
+                            <img src="./static/images/likebutton.png">
+                        </div>
+                        <div class="likeNumber">
+                            234
+                        </div>
+                        <div class="reportButton">
+                            <img src="./static/images/reportButton.png">
+                        </div>
+                    </div>
+                    <div class="viewReplies">
+                        ── collapse all replies
+                    </div>
+                    <div class="typeBox">
+                        <form class="replyForm">
+                            <div class="replypfpcommentBox">
+                                <div class="replyPFP">
+                                    <img src="./static/images/shinyPFP.gif">
+                                </div>
+                                <input type="text" class="replyCommentBox" placeholder="Comment Here">
+                            </div>
+                            <div class="replySubmitButtonRow">
+                                <input type="submit" class="replyCancelButton" value="Cancel">
+                                <input type="submit" class="replySubmitButton" value="Comment">
+                            </div>
+                        </form>
+                    </div>
+                    <article class="replyCommentContainer">
+                        <div class="replyPFP">
+                            <img src="./static/images/donPFP.png">
+                        </div>
+                        <div class="commentParagraphContainer">
+                            <div class="username">
+                                DonYall
+                                <div class="date">12/3/2023</div>
+                            </div>
+                            <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                In
+                                quod
+                                sint,
+                                eum distinctio ullam
+                                tempore
+                                iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat,
+                                omnis!
+                                Tempora,
+                                sapiente autem?
+                            </div>
+                            <div class="likeReplyReportContainer">
+                                <div class="likeButton">
+                                    <img src="./static/images/likebutton.png">
+                                </div>
+                                <div class="likeNumber">
+                                    234
+                                </div>
+                                <div class="reportButton">
+                                    <img src="./static/images/reportButton.png">
+                                </div>
+                            </div>
+                            <div class="typeBox">
+                                <form class="replyForm">
+                                    <div class="replypfpcommentBox">
+                                        <div class="replyPFP">
+                                            <img src="./static/images/shinyPFP.gif">
+                                        </div>
+                                        <input type="text" class="replyCommentBox" placeholder="Comment Here">
+                                    </div>
+                                    <div class="replySubmitButtonRow">
+                                        <input type="submit" class="replyCancelButton" value="Cancel">
+                                        <input type="submit" class="replySubmitButton" value="Comment">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="replyCommentContainer">
+                        <div class="replyPFP">
+                            <img src="./static/images/donPFP.png">
+                        </div>
+                        <div class="commentParagraphContainer">
+                            <div class="username">
+                                DonYall
+                                <div class="date">12/3/2023</div>
+                            </div>
+                            <div class="commentParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                In
+                                quod
+                                sint,
+                                eum distinctio ullam
+                                tempore
+                                iure ex earum qui cumque voluptatum doloribus ipsa corrupti numquam! Repellat,
+                                omnis!
+                                Tempora,
+                                sapiente autem?
+                            </div>
+                            <div class="likeReplyReportContainer">
+                                <div class="likeButton">
+                                    <img src="./static/images/likebutton.png">
+                                </div>
+                                <div class="likeNumber">
+                                    234
+                                </div>
+                                <div class="replyButton">
+                                    REPLY
+                                </div>
+                                <div class="reportButton">
+                                    <img src="./static/images/reportButton.png">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="viewMoreReplies">
+                        ── view more replies
+                    </div>
+                </div>
+            </article>
+        </div>
+</body>
+
+</html>

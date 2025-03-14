@@ -1,0 +1,281 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+*::selection {
+    background-color: rgb(64, 70, 85);
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: blockFont;
+    src: url("/static/fonts/Blockletter.otf");
+}
+
+@font-face {
+    font-family: popW;
+    src: url("/static/fonts/popW.ttf");
+}
+
+@font-face {
+    font-family: futurist;
+    src: url("/static/fonts/futurist-bold.otf");
+}
+
+.leftFixed {
+    position: fixed;
+    height: 100%;
+    width: 30vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(11, 31, 51);
+    font-family: "blockFont", sans-serif;
+    font-size: 2.7em;
+    line-height: 1em;
+    color: rgb(233, 209, 173);
+}
+
+.menuContainer {
+    display: flex;
+    height: 85%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    white-space: nowrap;
+}
+
+.goBack {
+    flex-direction: column;
+    padding: 0.4em;
+    display: inline-block;
+    font-family: "mutantNormal", sans-serif;
+}
+
+.goBack:hover {
+    font-family: "mutantOutline", sans-serif;
+}
+
+.menuContainer div:hover,
+.active {
+    font-family: "blockFont", sans-serif;
+    color: rgb(233, 209, 173);
+}
+
+.menuContainer div::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: rgb(233, 209, 173);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menuContainer div:hover:after {
+    width: 100%;
+}
+
+.active::after {
+    width: 100% !important;
+}
+
+.menuContainer .signOut {
+    cursor: pointer;
+    color: rgb(165, 42, 42, 0.6);
+}
+.signOut::after {
+    background: brown !important;
+}
+
+.signOut:hover {
+    color: brown !important;
+}
+
+.rightContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    left: 30vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+}
+
+.profilePicture {
+    display: flex;
+    width: 15em;
+    height: 15em;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.changeProfilePicture {
+    text-align: center;
+    padding: 0.5em 0.5em 0.75em 0.5em;
+    font-family: "blockFont", sans-serif;
+    color: rgb(11, 31, 50);
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.username {
+    display: flex;
+    height: 1em;
+    font-family: "futurist", sans-serif;
+    font-size: 5em;
+    color: rgb(11, 31, 50);
+}
+
+#usernameEditable {
+    height: 1em;
+    line-height: 1em;
+    min-width: 1vw;
+}
+
+.joinDate {
+    display: flex;
+    font-family: "futurist", sans-serif;
+    font-size: 1em;
+    color: rgb(117, 117, 117);
+    margin-top: -0.25em;
+    padding-bottom: 1.2em;
+}
+
+.commentLikesRow {
+    display: flex;
+    flex-direction: row;
+    width: 20em;
+    font-family: "blockFont", sans-serif;
+    justify-content: space-evenly;
+    text-align: center;
+    color: rgb(11, 31, 50);
+}
+
+#commentNumber {
+    font-family: "blockFont", sans-serif;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+#commentTitle {
+    margin-top: -0.3em;
+}
+
+#likesNumber {
+    font-family: "blockFont", sans-serif;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+#likesTitle {
+    margin-top: -0.3em;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.head::after {
+    content: "";
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    width: 80%;
+    border-bottom: solid 3px rgb(11, 31, 50);
+}
+
+.commentsAndLikesHistory {
+    margin-top: 3em;
+    width: 80%;
+}
+
+.commentLikesRowHistory {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    color: rgb(11, 31, 50);
+    font-family: "mutantNormal", sans-serif;
+}
+
+#likesHistory img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#commentsHistory img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.goBack a {
+    color: rgb(233, 209, 173);
+}
+
+.menuContainer a {
+    color: rgb(123, 114, 100);
+}
+
+.menuContainer a:hover {
+    color: rgb(233, 209, 173);
+}
+
+.username {
+    position: relative;
+    padding: 0em 0.5em;
+}
+
+.viewIcon img {
+    position: absolute;
+    left: 89%;
+    top: 0%;
+    width: 0.25em;
+    height: 0.25em;
+    margin: 0em 0em 0em 0.1em;
+    display: none;
+}
+
+.username:hover .viewIcon img {
+    display: block;
+    position: absolute;
+    right: -7%;
+    top: 0%;
+    width: 0.25em;
+    height: 0.25em;
+    margin: 0em 0em 0em 0.1em;
+}
+
+.viewIconSettings img {
+    position: absolute;
+    left: 89%;
+    top: 0%;
+    width: 0.25em;
+    height: 0.25em;
+    margin: 0em 0em 0em 0.1em;
+}

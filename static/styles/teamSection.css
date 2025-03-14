@@ -1,0 +1,322 @@
+.team-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: rgb(14, 13, 13);
+    position: relative;
+    cursor: none;
+}
+
+.teamLeft {
+    height: 100vh;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.teamLeft img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33.333333vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.teamRight {
+    background-color: rgb(244, 239, 236);
+    width: calc(100% / 1.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+}
+
+.teamTransitionCover {
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.teamRight > h1 {
+    height: 30vh;
+    width: 80%;
+    font-size: 6vw;
+    font-family: "Krona One";
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: rgb(11, 31, 50);
+    white-space: nowrap;
+    position: relative;
+    transition: 0.3s;
+}
+
+.teamRight > h1 span {
+    overflow: hidden;
+}
+
+.teamRight .teamTitleLine {
+    height: 4px;
+    width: 100%;
+    background: rgb(11, 31, 50);
+}
+
+.teamRight > h1 span small {
+    display: block;
+}
+
+.teamDetailsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 70vh;
+    padding-top: 10vh;
+    overflow: hidden;
+}
+
+.teamProfilesContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+#donProfileImage {
+    position: absolute;
+    left: 100vw;
+}
+
+#donProfile {
+    position: absolute;
+    left: 117vw;
+}
+
+#parallelProfileImage {
+    position: absolute;
+    left: 200vw;
+}
+
+#parallelProfile {
+    position: absolute;
+    left: 217vw;
+}
+
+#lifeProfileImage {
+    position: absolute;
+    left: 300vw;
+}
+
+#lifeProfile {
+    position: absolute;
+    left: 317vw;
+}
+
+#markProfileImage {
+    position: absolute;
+    left: 400vw;
+}
+
+#markProfile {
+    position: absolute;
+    left: 417vw;
+}
+
+.mainProfilePicture {
+    width: 15vw;
+    height: 15vw;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-right: 2vw;
+}
+
+.slidingProfile {
+    display: inline-block;
+    position: relative;
+    left: 0;
+}
+
+.profileDetails {
+    width: 28vw;
+    font-family: "blockFont", sans-serif;
+    color: rgb(11, 31, 50);
+}
+
+.profileDetails h2 {
+    width: max-content;
+    border-bottom: solid 3px rgb(11, 31, 50);
+    font-size: 3.75vw;
+    line-height: 3vw;
+    font-weight: 500;
+}
+
+.profileDetails h3 {
+    font-size: 1.25vw;
+    font-weight: 500;
+}
+
+.profileDetails a {
+    display: inline-block;
+    width: 1.5vw;
+    margin-right: 0.3vw;
+}
+.profileDetails img {
+    width: 100%;
+}
+
+.profileDetails p {
+    font-family: "futurist", sans-serif;
+    padding-top: 1.4vw;
+    font-size: 1vw;
+}
+
+.profilePaginationContainer {
+    position: relative;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 5em;
+    gap: 0.5em;
+    width: 100%;
+    cursor: pointer;
+    align-items: flex-end;
+}
+
+.profilePictureContainer {
+    height: 4.25em;
+}
+
+.profilePicture {
+    height: 3.5rem;
+    transform: translate(0em, 0.75em);
+    border-radius: 50%;
+    filter: brightness(0.5);
+}
+
+.profilePictureContainer:not(hover) > .profilePicture:not(.pfpSelected) {
+    transform: translate(0em, 0.75em);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profilePictureContainer:hover > .profilePicture:not(.pfpSelected) {
+    filter: brightness(1);
+    transform: translate(0em, 0em);
+    transition:
+        filter 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.pfpSelected {
+    position: relative;
+    filter: brightness(1);
+    transition: transform 0.2s ease-in-out;
+}
+
+#profilePaginationDot {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: rgb(11, 31, 50);
+    border: none;
+    position: absolute;
+    bottom: -1rem;
+    right: 16em;
+    transform: translateX(-1.5em);
+    transition:
+        right 0.2s ease-in-out,
+        background 0.3s;
+}
+#profilePaginationDot.hide {
+    background: transparent;
+}
+
+#team-section-cursor {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    position: absolute;
+    top: -5vw;
+    left: -5vw;
+    scale: 1;
+    transition:
+        scale 0.2s ease-in-out,
+        top 0.05s linear,
+        left 0.05s linear;
+    pointer-events: none;
+    background: white;
+    mix-blend-mode: difference;
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .teamTitle {
+        height: 10vh;
+    }
+
+    .teamLeft {
+        display: none;
+    }
+
+    .teamRight {
+        width: 100%;
+    }
+
+    .aboutUs {
+        height: 80vh;
+    }
+
+    #donProfile {
+        left: 132vw;
+    }
+
+    #parallelProfile {
+        left: 232vw;
+    }
+
+    #lifeProfile {
+        left: 332vw;
+    }
+
+    #markProfile {
+        left: 432vw;
+    }
+
+    .mainProfilePicture {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .profileDetails {
+        width: 38vw;
+    }
+
+    .profileName {
+        font-size: 10vw;
+        line-height: 8vw;
+    }
+
+    .profileRole {
+        font-size: 3vw;
+    }
+
+    .profileDetails p {
+        font-size: 2vw;
+    }
+}

@@ -1,0 +1,479 @@
+.blankContainer {
+    position: relative;
+    height: 450vh;
+}
+
+.secondContainer {
+    position: fixed;
+    top: 12.5vh;
+    width: 100%;
+    height: 87.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    z-index: 1;
+    background: linear-gradient(rgb(11, 31, 50), rgb(17, 47, 75));
+}
+
+.secondContainerNavContainer {
+    position: fixed;
+    width: 100%;
+    height: 12.5vh;
+    top: 0;
+    background-color: rgb(13, 18, 28);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.secondContainerNav {
+    list-style: none;
+
+    height: 12.5vh;
+}
+
+.navbar2 {
+    height: 100%;
+}
+
+.navbar2 ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: hwb(220 5% 89%);
+    position: relative;
+}
+
+.navbar2 li a {
+    font-size: 2vw;
+    font-family: "blockFont", sans-serif;
+    float: left;
+
+    width: 20%;
+    height: 12.5vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    transform: translateY(0%);
+    transition: 0.3s ease-in-out;
+    color: rgb(233, 209, 173);
+    z-index: 2;
+    opacity: 0.6;
+}
+
+.navbar2 li.selected a {
+    opacity: 1;
+}
+
+#SliderBackground {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    bottom: 0;
+    left: 0%;
+    background-color: rgb(11, 31, 50);
+    transition: 0.3s ease-in-out;
+}
+
+#Slider {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    bottom: 0;
+    left: 0%;
+    border-bottom: 0.5vh solid rgb(233, 209, 173);
+    transition: 0.3s ease-in-out;
+}
+
+.leftSecondContainer {
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#Heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.GOUP {
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+}
+
+.overflowStopper {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 0rem 1.2rem 0 1.2rem;
+}
+
+#Title {
+    font-family: "blockFont", sans-serif;
+    background-color: red;
+    background-image: linear-gradient(45deg, rgb(233, 209, 173), rgb(223, 206, 188));
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-size: 6vw;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.2s;
+    margin-bottom: -1.2vw;
+}
+
+#Versions {
+    font-family: "popW", sans-serif;
+    position: relative;
+    color: rgb(233, 209, 173);
+    font-size: 1.2vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    line-height: 1em;
+    transform: translateY(0);
+    transition: 0.2s 0.1s;
+    margin-bottom: 2vw;
+    line-height: 1em;
+}
+
+#Summary {
+    position: relative;
+    font-family: "futurist", sans-serif;
+    color: rgb(244, 239, 236);
+    font-size: 1.15vw;
+    text-align: left;
+
+    cursor: none;
+    display: flex;
+    justify-content: center;
+    padding: 0 6vw 0 6vw;
+    line-height: 130%;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s 0.2s;
+}
+
+#VersionsText {
+    max-height: 1em;
+    transition: 0.2s ease-in-out;
+}
+
+#VersionsImage {
+    position: relative;
+    width: 1.2vw;
+    height: 1.2vw;
+}
+
+#Downloads {
+    font-family: "popW", sans-serif;
+    position: relative;
+    color: rgb(233, 209, 173);
+    font-size: 1.2vw;
+    display: flex;
+    justify-content: center;
+    transform: translateY(0%);
+    opacity: 1;
+    transition: transform 0.2s ease-in-out;
+}
+
+#DownloadsImage {
+    position: relative;
+    width: 1.2vw;
+}
+
+.rightSecondContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageContainer:not(.transition3C) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(14, 13, 13);
+    width: 85%;
+    height: 85%;
+    left: 0%;
+    top: 0%;
+    overflow: hidden;
+    cursor: none;
+    transform: translateY(0%);
+    opacity: 1;
+    border-radius: 1.75vw;
+    transition: transform 0.2s ease-in-out;
+}
+
+.imageContainer.transition3C {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(14, 13, 13);
+    width: 85%;
+    height: 85%;
+    left: 0%;
+    top: 0%;
+    overflow: hidden;
+    cursor: none;
+    position: absolute;
+    transform: none;
+    pointer-events: none;
+    z-index: 2;
+    transition: transform 0.2s ease-in-out;
+}
+
+#thirdcontainer-transition,
+#thirdcontainer-transition-light {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    background-color: rgb(14, 13, 13);
+    z-index: 4;
+}
+
+#thirdcontainer-transition-light {
+    display: none;
+    height: 150vh;
+    transform: translateY(50vh);
+}
+
+.imageContainer:hover:not(.transition3C) {
+    transform: translateY(0) scale(1.05) !important;
+    transition: transform 0.2s ease-in-out;
+}
+
+.imageContainer:not(:hover):not(.transition3C) {
+    transform: translateY(0) scale(1);
+    transition: transform 0.2s ease-in-out;
+}
+
+#ImageGallery {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    scale: 1.3;
+    transition: translate 0.3s ease-in-out;
+}
+
+.imageCollection {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.imageCollection.activeCollection {
+    z-index: 3;
+    left: 0%;
+    transition: translate 0.3s ease-in-out;
+}
+
+.imageCollection.activeCollection img {
+    clip-path: inset(0 0 0 0);
+}
+
+.imageCollection:not(.activeCollection):not(.activeSoon):not(.inactiveSoon) {
+    z-index: 3;
+    left: 200%;
+}
+
+.imageCollection.inactiveSoon {
+    z-index: 3;
+    left: 0%;
+}
+
+.imageCollection.inactiveSoon img {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.7s ease-in-out;
+}
+
+.imageCollection.activeSoon {
+    left: 0%;
+    z-index: 2;
+}
+
+.gallery-image {
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    translate: calc((42.5vw - 100%) / 2);
+}
+
+#ImageGallery.reset {
+    transition: transform 0.3s ease-in-out;
+}
+
+#ImageGallery.transition {
+    transition: transform 0.2s ease-in-out;
+}
+
+.circle {
+    position: absolute;
+    width: 4.7vw;
+    height: 4.7vw;
+    display: flex;
+    border-radius: 50%;
+    background-color: rgba(223, 209, 173, 0.9);
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.arrow {
+    position: relative;
+    display: flex;
+    transform-origin: center;
+    scale: 0.7;
+    transition: transform 0.2s ease-in-out;
+}
+
+.pagination {
+    display: flex;
+    position: relative;
+    align-self: flex-end;
+    margin-bottom: 1.5vw;
+    scale: 1.5;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pagination:not(.changeModpack) {
+    transform: translateY(0%);
+}
+
+.pagination.changeModpack {
+    transform: translateY(200%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.75, 0.25, 0.75);
+}
+
+.miniImage {
+    width: 4vw;
+    height: 2.25vw;
+    filter: brightness(0.5);
+    transition: filter 0.3s ease-in-out;
+}
+
+.miniImage:not(hover):not(.imageSelected) {
+    width: 4vw;
+    height: 2.25vw;
+    filter: brightness(0.5);
+}
+
+.miniImage:hover:not(.imageSelected) {
+    filter: brightness(1);
+    transition: filter 0.3s ease-in-out;
+}
+
+.imageSelected {
+    width: 4vw;
+    height: 2.25vw;
+    filter: brightness(1);
+}
+
+.border {
+    position: absolute;
+    left: 0;
+    width: 4vw;
+    height: 2.25vw;
+    border: 0.2vw solid rgb(233, 209, 173);
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+@font-face {
+    font-family: blockFont;
+    src: url("/static/fonts/Blockletter.otf");
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .navbar2 li a {
+        font-size: 4vw;
+        line-height: 1em;
+    }
+
+    .leftSecondContainer {
+        width: 100%;
+        height: 50%;
+    }
+
+    .rightSecondContainer {
+        width: 100%;
+        height: 50%;
+    }
+
+    .imageContainer {
+        width: 85%;
+        height: 85%;
+        border-radius: 3.5vw;
+    }
+
+    #Title {
+        font-size: 10vw;
+    }
+
+    #Versions {
+        font-size: 3.5vw;
+    }
+
+    #VersionsImage {
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+
+    #Downloads {
+        font-size: 3.5vw;
+    }
+
+    #DownloadsImage {
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+
+    #Summary {
+        font-size: 2.5vw;
+        padding: 2.5vw 6vw 0 6vw;
+    }
+
+    .pagination {
+        scale: 3;
+        margin-bottom: 3.5vw;
+    }
+
+    .pagination a {
+        display: flex;
+    }
+
+    .gallery-image {
+        translate: calc((85vw - 100%) / 2);
+    }
+}
