@@ -1,0 +1,14 @@
+@font-face {
+  font-family: blockFont;
+  src: url("/static/fonts/Blockletter.otf");
+}
+
+@font-face {
+  font-family: popW;
+  src: url("/static/fonts/popW.ttf");
+}
+
+@font-face {
+  font-family: futurist;
+  src: url("/static/fonts/futurist-bold.otf");
+}
