@@ -1,97 +1,97 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 :root {
-    --primaryClr: #e9d1ad;
-    --lightPrimaryClr: #f4efec;
+  --primaryClr: #e9d1ad;
+  --lightPrimaryClr: #f4efec;
 
-    --secondaryClr: rgb(11, 31, 50);
+  --secondaryClr: rgb(11, 31, 50);
 }
 
 body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-x: hidden;
-    background-color: var(--secondaryClr);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  background-color: var(--secondaryClr);
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .bg-primary {
-    background: var(--lightPrimaryClr) !important;
+  background: var(--lightPrimaryClr) !important;
 }
 
 .scrollBarTrack {
-    position: fixed;
-    top: 50%;
-    right: 1.5lvw;
-    transform: translateY(-50%);
-    width: 0.6lvw;
-    height: 27.5lvh;
+  position: fixed;
+  top: 50%;
+  right: 1.5lvw;
+  transform: translateY(-50%);
+  width: 0.6lvw;
+  height: 27.5lvh;
 
-    background: rgba(48, 76, 96, 0.8);
-    border-radius: 300px;
-    z-index: 10;
-    opacity: 0;
+  background: rgba(48, 76, 96, 0.8);
+  border-radius: 300px;
+  z-index: 10;
+  opacity: 0;
 
-    transition: background 0.3s ease-in-out, opacity 400ms ease-in-out;
+  transition: background 0.3s ease-in-out, opacity 400ms ease-in-out;
 }
 
 .scrollBarThumb {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 5lvh;
-    border-radius: 300px;
-    background: rgba(11, 31, 50, 0.75);
-    transition: background 0.3s ease-in-out;
-    z-index: 11;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 5lvh;
+  border-radius: 300px;
+  background: rgba(11, 31, 50, 0.75);
+  transition: background 0.3s ease-in-out;
+  z-index: 11;
 }
 
 /* When we are in other mod section */
 .scrollBarTrack.light,
 .scrollBarTrack.light::after {
-    background: #aca289a9;
+  background: #aca289a9;
 }
 .scrollBarTrack.light .scrollBarThumb {
-    background: var(--primaryClr);
+  background: var(--primaryClr);
 }
 
 /* When we are at the top banner/hero section */
 .scrollBarTrack.invisible,
 .scrollBarTrack.invisible::after,
 .scrollBarTrack.invisible .scrollBarThumb {
-    background: transparent !important;
+  background: transparent !important;
 }
 
 /* Some lenis stuff I dont know */
 html.lenis {
-    height: auto;
+  height: auto;
 }
 
 .lenis.lenis-smooth {
-    scroll-behavior: auto;
+  scroll-behavior: auto;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .main-title::selection,
@@ -99,498 +99,494 @@ a {
 .mainTitle3::selection,
 .mainTitle3 img,
 #Title {
-    user-select: none;
+  user-select: none;
 }
 
 *:not(.main-title, .sub-title, .mainTitle3, .mainTitle3 img, #Title)::selection {
-    background-color: rgb(64, 70, 85);
+  background-color: rgb(64, 70, 85);
 }
 
 @font-face {
-    font-display: block;
-    font-family: blockFont;
-    src: url("/static/fonts/Blockletter.otf");
+  font-display: block;
+  font-family: blockFont;
+  src: url("/static/fonts/Blockletter.otf");
 }
 
 @font-face {
-    font-family: popW;
-    src: url("/static/fonts/popW.ttf");
+  font-family: popW;
+  src: url("/static/fonts/popW.ttf");
 }
 
 @font-face {
-    font-family: futurist;
-    src: url("/static/fonts/futurist-bold.otf");
-}
-
-.loadingScreen {
-    position: fixed;
-    display: flex;
-    top: 0;
-    z-index: 30;
-    width: 100%;
-    height: 100lvh;
-    background: linear-gradient(#0b1f32, rgb(13, 18, 28));
-    align-items: center;
-    justify-content: center;
-    transition: top 0.7s cubic-bezier(0.42, 0, 1, 1);
-}
-
-.loadingScreen.hideLoader {
-    top: -100lvh;
-}
-
-.loadingScreenContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.loadingScreenContent img {
-    width: 10lvw;
-}
-
-.loadingScreenContent h1 {
-    font-family: "blockFont", sans-serif;
-    font-size: 9.25lvw;
-    color: var(--primaryClr);
-    opacity: 1;
-    display: flex;
-    margin-top: -3.5lvw;
-}
-
-.loadingDots {
-    margin-left: 0.3vw;
-}
-
-.loadingDots span {
-    margin: 0 0.1vw;
-    animation: blink-animation 0.8s infinite alternate;
-}
-
-.loadingDots span:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.loadingDots span:nth-child(3) {
-    animation-delay: 0.8s;
+  font-family: futurist;
+  src: url("/static/fonts/futurist-bold.otf");
 }
 
 /* Define the blink animation */
 @keyframes blink-animation {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .loadingStatus {
-    color: var(--primaryClr);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-size: 2lvw;
+  color: var(--primaryClr);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 2lvw;
 
-    /* Change width using JS */
-    width: 100%;
-    display: flex;
-    justify-content: end;
+  /* Change width using JS */
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
 
 .loadingStatus h2 {
-    font-family: "blockFont", sans-serif;
-    font-size: 4lvw;
-    margin: 2lvh;
-    font-weight: 200;
+  font-family: "blockFont", sans-serif;
+  font-size: 4lvw;
+  margin: 2lvh;
+  font-weight: 200;
 }
 
 .loadingLine {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1.5lvh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5lvh;
 
-    /* Change width using JS */
-    width: 100%;
-    background: var(--primaryClr);
-    margin-top: 1lvh;
+  /* Change width using JS */
+  width: 100%;
+  background: var(--primaryClr);
+  margin-top: 1lvh;
 }
 
 .bannerContainer {
-    background-color: hwb(220 5% 89%);
-    width: 100%;
-    height: 100dvh;
+  background-color: hwb(220 5% 89%);
+  width: 100%;
+  height: 100dvh;
 }
 
 .slide {
-    position: absolute;
-    z-index: 3;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    background-size: cover;
-    background-position-y: 80%;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    transform-origin: center;
-    background-image: url("/static/images/headerBackgroundNight.png");
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-size: cover;
+  background-position-y: 80%;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  transform-origin: center;
+  background-image: url("/static/images/headerBackgroundNight.png");
 }
 
 @keyframes text-clip {
-    from {
-        clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    }
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
 
-    to {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 @keyframes left1 {
-    from {
-        transform: translateX(35%);
-    }
+  from {
+    transform: translateX(35%);
+  }
 
-    to {
-        transform: none;
-    }
+  to {
+    transform: none;
+  }
 }
 
 @keyframes left2 {
-    from {
-        transform: translateX(55%);
-    }
+  from {
+    transform: translateX(55%);
+  }
 
-    to {
-        transform: none;
-    }
+  to {
+    transform: none;
+  }
 }
 
 @keyframes left3 {
-    from {
-        opacity: 0;
-        transform: translateY(65%);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(65%);
+  }
 
-    to {
-        opacity: 1;
-        transform: none;
-    }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .title-profile-container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    margin-top: 1lvw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 1lvw;
 }
 
 .viewMoreAndProfile {
-    top: -100%;
-    position: relative;
-    margin-left: auto;
-    display: flex;
-    margin-right: 2.25lvw;
-    margin-top: 1.25lvw;
-    transition: top 1s cubic-bezier(0.5, 0, 0.1, 1);
-    transition-delay: 1.6s;
-    font-size: 1lvw;
+  top: -100%;
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  margin-right: 2.25lvw;
+  margin-top: 1.25lvw;
+  transition: top 1s cubic-bezier(0.5, 0, 0.1, 1);
+  transition-delay: 1.6s;
+  font-size: 1lvw;
 }
 
 .viewMoreIconBackground {
-    position: relative;
-    background-color: rgb(11, 31, 50);
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    border-radius: 1.25em;
-    height: 4.75em;
-    padding: 0.1875em;
-    overflow: hidden;
-    transition: width 0.6s cubic-bezier(0.5, 0, 0.1, 1);
+  position: relative;
+  background-color: rgb(11, 31, 50);
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border-radius: 1.25em;
+  height: 4.75em;
+  padding: 0.1875em;
+  overflow: hidden;
+  transition: width 0.6s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 .profileTitleContainer {
-    height: 100%;
-    background-color: rgb(13, 18, 28);
-    color: var(--primaryClr);
-    font-family: "blockFont", sans-serif;
-    font-size: 1.25em;
-    border-radius: 0.9em;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding-left: 1em;
-    padding-right: 1em;
-    gap: 0.4em;
-    white-space: nowrap;
+  height: 100%;
+  background-color: rgb(13, 18, 28);
+  color: var(--primaryClr);
+  font-family: "blockFont", sans-serif;
+  font-size: 1.25em;
+  border-radius: 0.9em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  gap: 0.4em;
+  white-space: nowrap;
 }
 
 #titleTabs {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    cursor: pointer;
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .titleTab {
-    position: relative;
+  position: relative;
 
-    color: var(--primaryClr);
-    font-family: "blockFont", sans-serif;
-    margin-left: 1.75em;
-    white-space: nowrap;
-    line-height: 1em;
-    transform: translateY(-100%);
-    transition: transform 0.1s ease-out;
-    display: flex;
+  color: var(--primaryClr);
+  font-family: "blockFont", sans-serif;
+  margin-left: 1.75em;
+  white-space: nowrap;
+  line-height: 1em;
+  transform: translateY(-100%);
+  transition: transform 0.1s ease-out;
+  display: flex;
 }
 
 .titleTab span {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.6s, opacity 0.6s;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s, opacity 0.6s;
 }
 
 .titleTab span.out {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .titleTab span.in {
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    transform: translateX(100%);
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .titleTab:hover span.out {
-    opacity: 0;
-    transform: translateX(-100%);
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .titleTab:hover span.in {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 .emptyLetterSpace {
-    padding: 0 0.1em;
+  padding: 0 0.1em;
 }
 
 #settingsSignIn {
-    position: absolute;
-    background-color: rgb(13, 18, 28);
-    width: 50%;
-    height: 30%;
-    left: 40%;
-    top: 75%;
-    clip-path: polygon(50% 10%, 55% 0, 60% 10%, 100% 10%, 100% 100%, 0 100%, 0 10%);
-    justify-content: center;
-    align-items: center;
-    display: none;
+  position: absolute;
+  background-color: rgb(13, 18, 28);
+  width: 50%;
+  height: 30%;
+  left: 40%;
+  top: 75%;
+  clip-path: polygon(50% 10%, 55% 0, 60% 10%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
 #settingsSignIn.settingsActive {
-    display: flex;
+  display: flex;
 }
 
 #settingsSignIn a {
-    font-family: "blockFont", sans-serif;
-    color: var(--primaryClr);
+  font-family: "blockFont", sans-serif;
+  color: var(--primaryClr);
 }
 
 #ProfilePFP {
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
 }
 
 #viewMoreIcon {
-    position: relative;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: inherit;
-    height: 100%;
-    padding: 0 1.75em 0 2.5em;
-    margin-right: 0.3em;
-    transition: right 0.6s cubic-bezier(0.5, 0, 0.1, 1);
+  position: relative;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+  height: 100%;
+  padding: 0 1.75em 0 2.5em;
+  margin-right: 0.3em;
+  transition: right 0.6s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 #viewMoreIcon span {
-    position: absolute;
-    width: 1em;
-    height: 0.2em;
-    background-color: var(--primaryClr);
-    color: var(--primaryClr);
-    border-radius: 0.1em;
+  position: absolute;
+  width: 1em;
+  height: 0.2em;
+  background-color: var(--primaryClr);
+  color: var(--primaryClr);
+  border-radius: 0.1em;
 }
 
 #viewMoreMiddle {
-    opacity: 1;
-    transition: opacity 0s 0.5s;
+  opacity: 1;
+  transition: opacity 0s 0.5s;
 }
 
 #viewMoreMiddle.navArrow {
-    opacity: 0;
+  opacity: 0;
 }
 
 #viewMoreTop {
-    margin-top: 0.8em;
-    transform: rotate(0);
-    transform-origin: 100% 50%;
-    transition: margin-top 0.3s 0.5s ease-in-out, transform 0.5s cubic-bezier(0.5, 0, 0.1, 1);
+  margin-top: 0.8em;
+  transform: rotate(0);
+  transform-origin: 100% 50%;
+  transition: margin-top 0.3s 0.5s ease-in-out, transform 0.5s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 #viewMoreBottom {
-    margin-bottom: 0.8em;
-    transform: rotate(0);
-    transform-origin: 100% 50%;
-    transition: margin-bottom 0.3s 0.5s ease-in-out, transform 0.5s cubic-bezier(0.5, 0, 0.1, 1);
+  margin-bottom: 0.8em;
+  transform: rotate(0);
+  transform-origin: 100% 50%;
+  transition: margin-bottom 0.3s 0.5s ease-in-out, transform 0.5s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 #viewMoreTop.navArrow {
-    margin-top: 0;
-    transform: rotate(-30deg);
-    transition: margin-top 0.4s ease-in-out, transform 0.4s 0.4s cubic-bezier(0.5, 0, 0.1, 1);
+  margin-top: 0;
+  transform: rotate(-30deg);
+  transition: margin-top 0.4s ease-in-out, transform 0.4s 0.4s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 #viewMoreBottom.navArrow {
-    margin-bottom: 0;
-    transform: rotate(30deg);
-    transition: margin-bottom 0.4s ease-in-out, transform 0.4s 0.4s cubic-bezier(0.5, 0, 0.1, 1);
+  margin-bottom: 0;
+  transform: rotate(30deg);
+  transition: margin-bottom 0.4s ease-in-out, transform 0.4s 0.4s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 .main-title,
 .sub-title,
 .mainTitle3 {
-    background-image: linear-gradient(45deg, var(--primaryClr), #dfcebc);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+  background-image: linear-gradient(45deg, var(--primaryClr), #dfcebc);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .main-title {
-    position: relative;
-    line-height: 1em;
-    left: 0.25em;
-    font-size: 11.5lvw;
-    font-family: "blockFont";
-    margin-bottom: -0.5lvw;
+  position: relative;
+  line-height: 1em;
+  left: 0.25em;
+  font-size: 11.5lvw;
+  font-family: "blockFont";
+  margin-bottom: -0.5lvw;
 }
 
 .sub-title {
-    position: relative;
-    max-width: 50%;
-    font-size: 3.75lvw;
-    left: 0.75em;
-    font-family: "blockFont";
-    margin-top: -1.7lvw;
+  position: relative;
+  max-width: 50%;
+  font-size: 3.75lvw;
+  left: 0.75em;
+  font-family: "blockFont";
+  margin-top: -1.7lvw;
 }
 
 .mainTitle3 {
-    font-size: 1.4lvw;
-    font-family: "blockFont";
-    display: flex;
-    align-items: center;
+  font-size: 1.4lvw;
+  font-family: "blockFont";
+  display: flex;
+  align-items: center;
 
-    position: absolute;
-    bottom: 1em;
-    left: 50%;
-    translate: -50% 0;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  translate: -50% 0;
 }
 
 .main-title.reveal {
-    animation: text-clip 1s 0.6s cubic-bezier(0.5, 0, 0.1, 1) both, left1 1s 1.6s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation: text-clip 1s 0.6s cubic-bezier(0.5, 0, 0.1, 1) both,
+    left1 1s 1.6s cubic-bezier(0.5, 0, 0.1, 1) both;
 }
 .sub-title.reveal {
-    animation: text-clip 1s 0.6s cubic-bezier(0.5, 0, 0.1, 1) both, left2 1s 1.6s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation: text-clip 1s 0.6s cubic-bezier(0.5, 0, 0.1, 1) both,
+    left2 1s 1.6s cubic-bezier(0.5, 0, 0.1, 1) both;
 }
 .mainTitle3.reveal {
-    animation: left3 1s 4.6s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation: left3 1s 4.6s cubic-bezier(0.5, 0, 0.1, 1) both;
 }
 
 .mainTitle3 img {
-    width: 0.9em;
-    margin-right: 0.5rem;
+  width: 0.9em;
+  margin-right: 0.5rem;
 }
 
 .midTextContainer {
-    position: fixed;
-    height: 100dvh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    background-color: var(--primaryClr);
-    overflow: hidden;
-    transition: opacity 0.3s ease-in-out;
+  position: fixed;
+  height: 100dvh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: var(--primaryClr);
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out;
 }
 
 #MidText,
 #MidText2 {
-    position: relative;
-    left: 10%;
-    top: 50%;
-    max-width: 65%;
-    transform: translateY(-50%);
-    font-family: "krona one", sans-serif;
-    font-size: 3.5lvw;
-    font-weight: bold;
-    color: rgb(172, 162, 137);
-    transition: transform 0.3s ease-in-out;
+  position: relative;
+  left: 10%;
+  top: 50%;
+  max-width: 65%;
+  transform: translateY(-50%);
+  font-family: "krona one", sans-serif;
+  font-size: 3.5lvw;
+  font-weight: bold;
+  color: rgb(172, 162, 137);
+  transition: transform 0.3s ease-in-out;
 }
 
 #MidText2 {
-    top: 100dvh;
+  top: 100dvh;
 }
 
 .highlight {
-    color: var(--secondaryClr);
+  color: var(--secondaryClr);
 }
 
 #circle-cursor {
-    width: 1.75lvw;
-    height: 1.75lvw;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-1.75lvw, -1.75lvw);
-    pointer-events: none;
-    background: white;
-    mix-blend-mode: difference;
-    z-index: 99;
-    transition: transform 0.07s linear, width 0.2s, height 0.2s, background 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 1.75lvw;
+  height: 1.75lvw;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-1.75lvw, -1.75lvw);
+  pointer-events: none;
+  background: white;
+  mix-blend-mode: difference;
+  z-index: 99;
+  transition: transform 0.07s linear, width 0.2s, height 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #circle-cursor.DownloadCursor {
-    width: 5lvw;
-    height: 5lvw;
-    mix-blend-mode: normal;
-    transform: scale(3) translate(-1.75lvw, -1.75lvw);
+  width: 5lvw;
+  height: 5lvw;
+  mix-blend-mode: normal;
+  transform: scale(3) translate(-1.75lvw, -1.75lvw);
 }
 #circle-cursor.DownloadCursor h1 {
-    opacity: 1;
+  opacity: 1;
 }
 
 #circle-cursor h1 {
-    opacity: 0;
-    font-weight: 500;
-    font-size: 0.6lvw;
-    letter-spacing: -0.05lvw;
-    font-family: "Krona one", sans-serif;
+  opacity: 0;
+  font-weight: 500;
+  font-size: 0.6lvw;
+  letter-spacing: -0.05lvw;
+  font-family: "Krona one", sans-serif;
 }
 
-/* body:not(.hideCursor) {
-    cursor: none;
-} */
+.CTsection {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100vh;
+}
+
+.CTImgContainer {
+  position: relative;
+  overflow-x: hidden;
+  width: 33.3333vw;
+  height: 100%;
+  transition: width 1s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+.CTImgContainer.fullScreen {
+  width: 100vw;
+}
+
+.CTImgContainer img {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.CTImgContainer #seeYouText {
+  position: absolute;
+  font-family: "blockFont", sans-serif;
+  font-size: 18.25vw;
+  text-align: center;
+  line-height: 1em;
+  bottom: 0%;
+  width: 90vw;
+  color: rgb(233, 220, 200);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  margin-left: 5vw;
+  margin-right: 5vw;
+  transition: bottom 1s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+.CTImgContainer #seeYouText.fullScreen {
+  bottom: 36%;
+}
+
+.commentSection {
+  background-color: rgb(244, 239, 236);
+  cursor: default;
+  padding-top: 1vh;
+}

@@ -422,15 +422,3 @@ let tl2 = gsap.timeline({
 tl2.to(".CTImgContainer", { borderRadius: "0 0 4vw 4vw", scale: 0.96 })
    .to(".CTImgSlow", { y: "25%" }, "<")
    .to("#seeYouText", { y: "-45%" }, "<")
-
-gsap.to(scrollThumb, {
-  scrollTrigger: {
-    trigger: ".commentTitle",
-    start: "center center",
-    end: "max",
-    scrub: true,
-    onToggle: () => {
-      scrollBarTrack.classList.toggle("invisible");
-    },
-  },
-});
