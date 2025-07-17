@@ -235,10 +235,7 @@ a {
 }
 
 .viewMoreAndProfile {
-  top: -100%;
-  position: relative;
   margin-left: auto;
-  display: flex;
   margin-right: 2.25lvw;
   margin-top: 1.25lvw;
   transition: top 1s cubic-bezier(0.5, 0, 0.1, 1);
@@ -324,28 +321,6 @@ a {
 }
 .emptyLetterSpace {
   padding: 0 0.1em;
-}
-
-#settingsSignIn {
-  position: absolute;
-  background-color: rgb(13, 18, 28);
-  width: 50%;
-  height: 30%;
-  left: 40%;
-  top: 75%;
-  clip-path: polygon(50% 10%, 55% 0, 60% 10%, 100% 10%, 100% 100%, 0 100%, 0 10%);
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-
-#settingsSignIn.settingsActive {
-  display: flex;
-}
-
-#settingsSignIn a {
-  font-family: "blockFont", sans-serif;
-  color: var(--primaryClr);
 }
 
 #ProfilePFP {
